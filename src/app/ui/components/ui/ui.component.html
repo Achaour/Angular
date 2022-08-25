@@ -1,0 +1,50 @@
+<!--html de ui comp-->
+<header class="fixed-top">
+
+  <!-- <button class="btn btn-primary" (click)="toggle()">Open/close</button> -->
+<!-- deplacer le bouton et utiliser ng content -->
+
+<span
+  (click)='toggle()'
+  >
+    <ng-content
+    select='.tr-btn-close'
+    *ngIf="open"
+    ></ng-content>
+
+    <ng-content
+    select='.tr-btn-nav'
+    *ngIf="!open"
+    ></ng-content>
+  </span>
+
+
+<ng-content select=".tr-header" ></ng-content>
+
+
+
+</header>
+<main [ngClass]="{'close-aside': !open}">
+  <div class="shadow position-fixed">
+  </div>
+  <aside>
+    <div class="scroller">
+      Nav
+      <ng-content select=".tr-nav"></ng-content>
+      <ng-content select=".tr-icon-edit" ></ng-content>
+
+    </div>
+  </aside>
+  <div class="page">
+    <div class="contents">
+      <ng-content select=".tr-router" routerLink='sign-in'  ></ng-content>
+     
+    </div>
+    <footer>
+      Footer
+      <ng-content select=".tr-footer"></ng-content>
+      <ng-content select=".tr-icon-delete" ></ng-content>
+
+    </footer>
+  </div>
+</main>
