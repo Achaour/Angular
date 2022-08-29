@@ -1,1 +1,33 @@
-<p>page-list-orders works!</p>
+<!-- <p>page-list-orders works!</p>
+
+
+<ul>
+
+  <li *ngFor="let i of order">
+
+    <div> Client: {{i.client}}</div>
+    <p> Type de prestation: {{i.typePresta}}</p>
+    <p> Nombre de jours: {{i.nbJours}}</p>
+
+
+
+  </li>
+</ul>
+
+ -->
+ <app-template-full-width [titleEnfant]='titleParent'>
+  <!-- ajouter un tableau -->
+  <app-table-light
+  [collectionEnfant]="collection"
+  [headersEnfant]="headers"
+  ></app-table-light>
+  <!-- envoyer collection avec @Input() -->
+  <!-- vérifier aussi dans app-table-light que vous recevez bien collection -->
+</app-template-full-width>
+
+<!-- <app-table-light [collectionEnfant]="collection"></app-table-light> -->
+
+<app-table-light
+  [collectionEnfant]="collection"
+  [headersEnfant]="headers"
+  ></app-table-light>

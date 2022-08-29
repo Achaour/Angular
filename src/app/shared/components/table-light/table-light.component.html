@@ -1,0 +1,29 @@
+<p>table-light works!</p>
+
+
+
+
+
+<!-- <li *ngFor="let i of collectionEnfant">
+
+  <div> Client: {{i.client}}</div>
+  <p> Type de prestation: {{i.typePresta}}</p>
+  <p> Nombre de jours: {{i.nbJours}}</p> -->
+
+
+  <table >
+    <tr *ngFor="let header of headersEnfant">
+      <th>{{header}}</th>
+    </tr>
+
+    <tr *ngFor="let element of collectionEnfant" >
+      <td>{{element.client}}</td>
+      <td>{{element.typePresta}}</td>
+      <td>{{element.nbJours}}</td>
+      <td>{{element.comment}}</td>
+      <td>{{element.tva}}</td>
+      <td>{{element.tjmHt}}</td>
+
+    </tr>
+
+  </table>

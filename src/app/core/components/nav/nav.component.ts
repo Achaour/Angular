@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { VersionService } from '../../version.service';
 
 @Component({
   selector: 'app-nav',
@@ -7,9 +8,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavComponent implements OnInit {
 
-  constructor() { }
+data!:any;
+  constructor(
 
-  ngOnInit(): void {
+    private versionService:VersionService
+  ) {
+
+//versionService.subj.subscribe(data=> console.log(data,'observable'));
+
   }
+  ngOnInit(): void {
 
+
+  }
+  onAdd(){
+    this.versionService.increment();
+  }
 }
